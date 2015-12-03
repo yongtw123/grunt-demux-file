@@ -102,7 +102,7 @@ grunt.initConfig({
 		custom: {
 		  options: {
 				delimiters: ['<<<', '>>>'],
-			  separator: ' | ',
+			  	separator: ' | ',
 				prefixes: ['A/', 'B/', 'C/']
 			},
 			files: [{
