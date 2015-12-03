@@ -56,6 +56,21 @@ module.exports = function(grunt) {
 					src: ['*'],
 					dest: 'tmp3/'
 				}]
+			},
+			custom2: {
+				options: {
+					delimiters: ['<<<', '>>>'],
+					separator: ' | ',
+					prefixes: ['A/', 'B/', 'C/']
+				},
+				files: [{
+					expand: true,
+					flatten: true,
+					filter: 'isFile',
+					cwd: 'test/',
+					src: ['fixtures/*'],
+					dest: 'tmp4/'
+				}]
 			}
 		},
 

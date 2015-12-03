@@ -37,7 +37,7 @@ exports.demux_file = {
 	},
 	expanded: function(test) {
 		test.expect(2);
-		var actual = 'tmp2/2test/fixtures/123',
+		var actual = 'tmp2/2123',
 			expected = 'test/expected/' + actual;
 		test.ok(grunt.file.exists(actual), 'file exists.');
 		test.equal(grunt.file.read(actual), grunt.file.read(expected), 'should be identical.');
@@ -45,7 +45,15 @@ exports.demux_file = {
 	},
 	custom: function(test) {
 		test.expect(2);
-		var actual = 'tmp3/C/test/fixtures/123',
+		var actual = 'tmp3/C/123',
+			expected = 'test/expected/' + actual;
+		test.ok(grunt.file.exists(actual), 'file exists.');
+		test.equal(grunt.file.read(actual), grunt.file.read(expected), 'should be identical.');
+		test.done();
+	},
+	custom2: function(test) {
+		test.expect(2);
+		var actual = 'tmp4/C/123',
 			expected = 'test/expected/' + actual;
 		test.ok(grunt.file.exists(actual), 'file exists.');
 		test.equal(grunt.file.read(actual), grunt.file.read(expected), 'should be identical.');

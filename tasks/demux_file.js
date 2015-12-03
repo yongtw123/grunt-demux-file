@@ -61,8 +61,14 @@ module.exports = function(grunt) {
             }).forEach(function(filepath) {
                 var file = grunt.file.read(filepath);
                 options.prefixes.forEach(function(prefix, index) {
-                    var newfile = file.slice(),
-                        dest = ((isExpanded) ? f.orig.dest : f.dest) + prefix + filepath;
+                    var newfile = file.slice(), dest;
+                    if (isExpanded) {
+                        var endindex = f.dest.indexOf(f.orig.dest) + f.orig.dest.length;
+                        dest = f.dest.substr(0, endindex) + prefix + f.dest.substr(endindex);
+                    }
+                    else {
+                        dest = f.dest + prefix + filepath;
+                    }
                     newfile = newfile.replace(delim, function(match, p1) {
                         //there is only one capturing group
                         return p1.split(options.separator)[index].trim();			 

@@ -60,7 +60,7 @@ The separator to split the muxed string.
 
 #### Basic
 ```
-//test/fixtures/test.txt
+/* test/fixtures/test.txt */
 [[[ 1,2,3 ]]]
 ```
 
@@ -79,17 +79,17 @@ grunt.initConfig({
 ```
 
 ```
-//tmp/0test/fixtures/test.txt
+/* tmp/0test/fixtures/test.txt */
 1
-//tmp/1test/fixtures/test.txt
+/* tmp/1test/fixtures/test.txt */
 2
-//tmp/2test/fixtures/test.txt
+/* tmp/2test/fixtures/test.txt */
 3
 ```
 
 #### Custom Options
 ```
-//test/fixtures/test.txt
+/* test/fixtures/test.txt */
 <<< 1 | 2 | 3 >>>
 ```
 
@@ -107,7 +107,7 @@ grunt.initConfig({
 			},
 			files: [{
 				expand: true,
-				cwd: 'test/fixtures/test.txt',
+				cwd: 'test/fixtures/',
 				src: ['*'],
 				dest: 'tmp3/'
 			}]
@@ -117,11 +117,11 @@ grunt.initConfig({
 ```
 
 ```
-//tmp3/A/test/fixtures/test.txt
+/* tmp3/A/test.txt */
 1
-//tmp3/B/test/fixtures/test.txt
+/* tmp3/B/test.txt */
 2
-//tmp3/C/test/fixtures/test.txt
+/* tmp3/C/test.txt */
 3
 ```
 
