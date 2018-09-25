@@ -1,7 +1,7 @@
 {
   "name": "grunt-demux-file",
   "description": "Spawns multiple files from delimiter-separated values in source",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "homepage": "https://github.com/yongtw123/grunt-demux-file",
   "author": {
     "name": "Yong Tseng",
