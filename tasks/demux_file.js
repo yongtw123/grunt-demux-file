@@ -71,7 +71,14 @@ module.exports = function(grunt) {
                     }
                     newfile = newfile.replace(delim, function(match, p1) {
                         //there is only one capturing group
-                        return p1.split(options.separator)[index].trim();			 
+                        var splitted = p1.split(options.separator);
+                        if (splitted.length <= index) {
+                            grunt.log.warn('Number of delimited values smaller than number of prefixes. Check integrity of delimited values in ' + filepath +'.');
+                            return '';
+                        }
+                        else {
+                            return splitted[index].trim();			 
+                        }  			 
                     });
                     grunt.file.write(dest, newfile);
                     grunt.verbose.writeln('File "' + dest.green + '" created.');
