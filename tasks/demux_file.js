@@ -44,7 +44,7 @@ module.exports = function(grunt) {
         options.delimiters = options.delimiters.map(function(delim) {
             return regexesc(delim);
         });
-        options.delimiters.splice(1, 0, '(.*)');
+        options.delimiters.splice(1, 0, '(.*?)');
         var delim = new RegExp(options.delimiters.join(''), 'g');
 
 
